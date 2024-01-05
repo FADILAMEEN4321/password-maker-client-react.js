@@ -95,8 +95,8 @@ function App() {
 
   return (
     <>
-      <div className="bg-blue-100 flex items-center justify-center h-screen">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
+      <div className="bg-blue-200 flex items-center justify-center h-screen">
+        <div className="bg-white p-8 rounded-lg shadow-2xl max-w-md w-full mx-4">
           <h1 className="mb-2 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
               Fortify Key
@@ -106,7 +106,7 @@ function App() {
             Elevate Your Security, Empower Your Passwords!
           </p>
 
-          <div className="mb-4 h-12 bg-slate-300 rounded-md flex items-center justify-between px-4">
+          <div className="mb-4 h-12 bg-blue-100 rounded-md flex items-center justify-between px-4">
             <span>{generatedPassword}</span>
             <button
               onClick={copyToClipboard}

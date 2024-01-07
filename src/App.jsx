@@ -16,49 +16,69 @@ function App() {
     math: true,
   });
 
+  /**
+   * Copies the generated password to the clipboard
+   * and sets the copied state to true.
+   * After 3 seconds, it resets the copied state to false.
+   */
   const copyToClipboard = () => {
     navigator.clipboard.writeText(generatedPassword);
     setCopied(true);
-    // Reset the copied state after 5 seconds
     setTimeout(() => {
       setCopied(false);
     }, 3000);
   };
 
+  /**
+   * Updates the email state variable with the value from the input event.
+   * This allows the email value to be updated as the user types in the input.
+   */
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
+  /**
+   * Handles submitting the email form.
+   * Prevents default form submission behavior.
+   * Sets loading state to true.
+   * Makes API call to email endpoint with email and password data.
+   * Handles promise resolution and rejection.
+   * On finally, sets loading state back to false.
+   */
   const handleEmailSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
+    event.preventDefault();
     setLoading(true);
-    // Your API endpoint for handling the email
+
     const emailApiUrl = "http://127.0.0.1:8000/api/send-password-to-email/";
 
-    // API request payload
     const emailSendData = {
       email: email,
       password: generatedPassword,
     };
 
-    // Axios POST request to the API
     axios
       .post(emailApiUrl, emailSendData)
-      .then((response) => {
-      })
-      .catch((error) => {
-
-      })
+      .then((response) => {})
+      .catch((error) => {})
       .finally(() => {
         setLoading(false);
       });
   };
 
+  /**
+   * Handles change events from the password length slider input.
+   * Parses the slider value to an integer and updates the passwordLength state with the new value.
+   */
   const handleSliderChange = (event) => {
     const value = parseInt(event.target.value, 10);
     setPasswordLength(value);
   };
 
+  /**
+   * Handles change events from the password complexity checkboxes.
+   * Updates the checkboxValues state object with the new checked value.
+   * Spread operator is used to merge previous state with updated key/value pair.
+   */
   const handleCheckboxChange = (checkbox) => {
     setCheckboxValues((prevValues) => ({
       ...prevValues,
@@ -66,11 +86,19 @@ function App() {
     }));
   };
 
+  /**
+   * Generates a random password by making a request
+   * to the password generation API.
+   *
+   * Constructs the request payload from component state,
+   * including password length and complexity options.
+   *
+   * Makes the API request, sets the generated password in state
+   * on success, and logs any errors.
+   */
   const generatePassword = () => {
-    // API endpoint for generating passwords
     const apiUrl = "http://127.0.0.1:8000/api/generate-password/";
 
-    // API request payload
     const requestData = {
       length: passwordLength,
       complexity: Object.keys(checkboxValues).filter(
@@ -78,7 +106,6 @@ function App() {
       ),
     };
 
-    // Axios POST request to API
     axios
       .post(apiUrl, requestData)
       .then((response) => {

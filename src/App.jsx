@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import {axiosInstance} from './servies/axios';
 
 function App() {
   const [email, setEmail] = useState("");
@@ -49,14 +49,14 @@ function App() {
     event.preventDefault();
     setLoading(true);
 
-    const emailApiUrl = "http://127.0.0.1:8000/api/send-password-to-email/";
+    const emailApiUrl = "send-password-to-email/";
 
     const emailSendData = {
       email: email,
       password: generatedPassword,
     };
 
-    axios
+    axiosInstance
       .post(emailApiUrl, emailSendData)
       .then((response) => {})
       .catch((error) => {})
@@ -97,7 +97,7 @@ function App() {
    * on success, and logs any errors.
    */
   const generatePassword = () => {
-    const apiUrl = "http://127.0.0.1:8000/api/generate-password/";
+    const apiUrl = "generate-password/";
 
     const requestData = {
       length: passwordLength,
@@ -106,7 +106,7 @@ function App() {
       ),
     };
 
-    axios
+    axiosInstance
       .post(apiUrl, requestData)
       .then((response) => {
         setGeneratedPassword(response.data.password);

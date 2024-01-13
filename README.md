@@ -1,6 +1,6 @@
 # FortifyKey - Password Generation Application
 
-Check out the project website: [FortifyKey Website](https://your-website.com) 🌐
+Check out the project website: [fortifykey.com](https://fortifykey.netlify.app/) 🌐
 
 ## About
 

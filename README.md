@@ -1,5 +1,7 @@
 # FortifyKey - Password Generation Application
 
+Check out the project website: [FortifyKey Website](https://your-website.com) 🌐
+
 ## About
 
 FortifyKey is a powerful password generating application built using Django Rest Framework and ReactJS. This project represents an experiment where I utilized the capabilities of Large Language Models (LLMs) to develop the application. The development process involved using different AI tools for code writing, UI building, and code documentation.
@@ -8,9 +10,9 @@ FortifyKey is a powerful password generating application built using Django Rest
 
 ### Tools Used:
 
-1. **Building UI:** [Screenshot to Code](https://github.com/abi/screenshot-to-code) by [abhi](https://github.com/abi/screenshot-to-code).
-2. **Generating Code:** ChatGPT, Bard with relevant prompts.
-3. **Documentation:** Cody AI vscode extension.
+1. **Building UI:** [Screenshot to Code](https://github.com/abi/screenshot-to-code) by [abhi](https://github.com/abi).
+2. **Generating Code:** ChatGPT 3.5, Bard with relevant prompts.
+3. **Documentation:** Cody AI VSCode extension.
 
 ## Features:
 
@@ -22,4 +24,6 @@ FortifyKey is a powerful password generating application built using Django Rest
 
 ## Contact
 
-This project is created and maintained by Fadil Ameen. If you have any questions or suggestions, feel free to reach out at [fadilameen4321@gmail.com](mailto:fadilameen4321@gmail.com).
+This project is created and maintained by Fadil Ameen. If you have any questions or suggestions, feel free to reach out at [fadilameen4321@gmail.com](mailto:fadilameen4321@gmail.com). 📧
+
+
